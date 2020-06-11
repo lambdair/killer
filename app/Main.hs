@@ -46,8 +46,8 @@ main = do
     readHandle <- openFile file ReadMode
     list       <- readToList readHandle
     let formula = show $ cageFormula list
-    writeHandle <- openFile "output.txt" WriteMode
+    writeHandle <- openFile "output.smt2" WriteMode
     writeToText writeHandle formula
-    putStrLn "creating \"output.txt\" successful"
+    putStrLn "creating \"output.smt2\" successful"
     hClose readHandle
     hClose writeHandle
